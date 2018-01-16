@@ -1,8 +1,11 @@
 import random
 def main():
+    #initialize the loop control
     playAgain = "y"
-    while playAgain == "y":
+    while (playAgain == "y"):
+        #generate a random number between 1 and 3.
         randomNumber = random.randint(1,3)
+        #call the getChoice function.
         compGuess = getChoice(randomNumber)
 
         userGuess = getUserInput()
