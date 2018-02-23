@@ -9,7 +9,7 @@ def main():
         compGuess = getChoice(randomNumber)
 
         userGuess = getUserInput()
-        getResult(compGuess,userGuess)
+        print(getResult(compGuess,userGuess))
 
         playAgain = input("Do you want to play again? Enter y for yes: ")
         playAgain = playAgain.lower()
@@ -26,19 +26,18 @@ def getChoice(number):
 
 def getResult(computerGuess, userGuess):
     if computerGuess == userGuess:
-        print("It's a tie. Play again.")
-        print("You chose " + userGuess + ".")
-        print("The computer also chose " + computerGuess + ".")
+        output = "It's a tie. Play again.\nYou chose " + userGuess + ".\nThe computer also chose " + computerGuess + "."
+        return output
+
     elif ((computerGuess == "Rock" and userGuess == "Scissors") or
     (computerGuess == "Paper" and userGuess == "Rock") or
     (computerGuess == "Scissors" and userGuess == "Paper")):
-        print("Oops! The computer wins.")
-        print("You chose " + userGuess + ".")
-        print("The computer chose " + computerGuess + ".")
+        output = "Oops! The computer wins.\nYou chose " + userGuess + ".\nThe computer chose " + computerGuess + "."
+        return output
+
     else:
-        print("Congratulations! You win.")
-        print("You chose " + userGuess + ".")
-        print("The computer chose " + computerGuess + ".")
+        output = "Congratulations! You win.\nYou chose " + userGuess + ".\nThe computer chose " + computerGuess + "."
+        return output
 
 def getUserInput():
     user = input("Enter your choice: ")
