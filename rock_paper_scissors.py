@@ -47,4 +47,5 @@ def getUserInput():
     rem_letters = user[1:].lower()
     user = first_letter + rem_letters
     return user
-main()
+if __name__ == '__main__':
+    main()
