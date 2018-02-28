@@ -22,13 +22,14 @@ def main():
 
 
 def getChoice(number):
+    '''return Rock, Paper, or Scissors based on user's numeric choice'''
     if number == 1:
         choice = "Rock"
     elif number == 2:
         choice = "Paper"
     else:
         choice = "Scissors"
-    return choice
+    return choiceS
 
 
 def getResult(computerGuess, userGuess):
