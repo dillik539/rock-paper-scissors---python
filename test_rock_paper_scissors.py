@@ -25,13 +25,17 @@ class TestRockPaperScissors(unittest.TestCase):
     def test_result(self):
         self.assertEqual("Tie", getResult("Rock", "Rock"))
         self.assertEqual("Computer", getResult("Rock", "Scissors"))
-
-        # etc....
+        self.assertEqual("Computer", getResult("Paper", "Rock"))
+        self.assertEqual("Computer", getResult("Scissors", "Paper"))
+        self.assertEqual("User", getResult("Paper", "Scissors"))
+        self.assertEqual("User", getResult("Scissors", "Rock"))
+        self.assertEqual("User", getResult("Rock", "Paper"))
 
 
     def test_get_choice(self):
-        #TODO write this test 
-        pass
+        self.assertEqual("Rock", getChoice(1))
+        self.assertEqual("Paper", getChoice(2))
+        self.assertEqual("Scissors", getChoice(3))
 
 
 if __name__ == '__main__':
