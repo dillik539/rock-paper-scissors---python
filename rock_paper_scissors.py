@@ -29,7 +29,7 @@ def getChoice(number):
         choice = "Paper"
     else:
         choice = "Scissors"
-    return choiceS
+    return choice
 
 
 def getResult(computerGuess, userGuess):
@@ -66,20 +66,19 @@ def formatWinner(winner, computerGuess, userGuess):
 
 
 def getUserInput():
+    '''converts numeric user input to rock, paper, or scissors'''
+    while True:
+        try:
+            user_input = int(input('Enter your choice: 1 = rock, 2 = paper, 3 = scissors: '))
+            while (user_input <1 or user_input>3):
+                user_input = int(input('Enter number between 1 and 3: '))
+            else:
+                break
+        except ValueError:
+            print('Please enter numeric value.')
 
-    # Suggestion: tell user what they need to enter
-    # User should enter 1 = rock, 2 = paper or 3 = scissors
-    # Add some validation
-    # Then you can use getChoice to turn the number into "rock" or "paper" or "scissors"
-
-    user = input("Enter your choice: ")
-    user = user.strip()
-
-    first_letter = user[0].upper()
-    rem_letters = user[1:].lower()
-    user = first_letter + rem_letters
-    return user
-
+    user_input = getChoice(user_input)
+    return user_input
 
 
 if __name__ == '__main__':
